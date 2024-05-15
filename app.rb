@@ -36,3 +36,19 @@ get ("/paper") do
 
   erb(:paper)
 end
+
+get ("/scissors") do
+  moves = ["rock", "paper", "scissors"]
+
+  @computer = moves.sample
+
+  if @computer == "paper"
+    @output = "won"
+  elsif @computer == "scissors"
+    @output = "tied"
+  else
+    @output = "lost"
+  end
+
+  erb(:scissors)
+end
